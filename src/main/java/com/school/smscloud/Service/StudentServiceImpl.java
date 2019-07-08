@@ -26,8 +26,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student fetchStudent(Student student) {
-        Optional<Student> optional = studentRepository.findById(student.getId());
+    public Student fetchStudent(Integer Id) {
+        Optional<Student> optional = studentRepository.findById(Id);
         Student student1 = optional.get();
         return student1;
     }

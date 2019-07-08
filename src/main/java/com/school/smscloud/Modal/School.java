@@ -18,12 +18,6 @@ public class School {
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
     List<Student> students;
 
-    public School(Integer id, String name, String city) {
-        this.id = id;
-        this.name = name;
-        this.city = city;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -46,5 +40,13 @@ public class School {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }

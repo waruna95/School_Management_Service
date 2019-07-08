@@ -12,7 +12,7 @@ public class Student {
     Integer id;
     String name;
     String schoolname;
-    String grade;
+    Integer grade;
 
     @ManyToOne
     @JoinColumn
@@ -43,11 +43,19 @@ public class Student {
         this.schoolname = schoolname;
     }
 
-    public String getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 }

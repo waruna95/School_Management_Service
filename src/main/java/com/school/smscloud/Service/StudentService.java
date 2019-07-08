@@ -10,5 +10,5 @@ import java.util.List;
 public interface StudentService {
     Student save(Student student);
     List<Student> fetchAllStudents();
-    Student fetchStudent(Student student);
+    Student fetchStudent(Integer Id);
 }
