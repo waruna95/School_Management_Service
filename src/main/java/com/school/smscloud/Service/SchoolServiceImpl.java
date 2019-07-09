@@ -26,11 +26,16 @@ public class SchoolServiceImpl implements SchoolService{
     }
 
     @Override
-    public School fetchSchool(Integer Id) {
-        Optional<School> optional = schoolRepository.findById(Id);
-        School school1 = optional.get();
-        return school1;
+    public School fetchSchool(String Id) {
+        return null;
     }
+
+//    @Override
+//    public School fetchSchool(String Id) {
+//        Optional<School> optional = schoolRepository;
+//        School school1 = optional.get();
+//        return school1;
+//    }
 
 
 }

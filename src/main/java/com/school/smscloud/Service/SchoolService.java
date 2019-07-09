@@ -9,6 +9,6 @@ import java.util.List;
 public interface SchoolService {
     School save(School school);
     List<School> fetchAllSchools();
-    School fetchSchool(Integer Id);
+    School fetchSchool(String Id);
 
 }

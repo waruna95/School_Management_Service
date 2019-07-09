@@ -1,5 +1,7 @@
 package com.school.smscloud.Modal;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,8 +9,17 @@ import java.util.List;
 public class School {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_seq")
+   @GenericGenerator(
+           name = "book_seq",
+           strategy = "com.school.smscloud.Modal.IdGenerator",
+           parameters = {
+//                 @org.hibernate.annotations.Parameter(name = IdGenerator.INCREMENT_PARAM, value = "50"),
+                   @org.hibernate.annotations.Parameter(name = IdGenerator.prefix, value = "EMP_"),
+                   @org.hibernate.annotations.Parameter(name = IdGenerator.numberParam, value = "%03d")
+           }
+   )
+    String id;
 
     String name;
     String city;
@@ -18,11 +29,11 @@ public class School {
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
     List<Student> students;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

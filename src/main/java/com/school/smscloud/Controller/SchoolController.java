@@ -30,7 +30,7 @@ public class SchoolController {
 
     //get one school
     @RequestMapping(value = "school", method = RequestMethod.GET)
-    public ResponseEntity<School> fetchSchool(@PathVariable Integer id){
+    public ResponseEntity<School> fetchSchool(@PathVariable String id){
         School school = schoolService.fetchSchool(id);
         if(school == null) {
             return ResponseEntity.notFound().build();
